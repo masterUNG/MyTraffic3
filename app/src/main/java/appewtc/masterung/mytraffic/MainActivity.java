@@ -1,5 +1,6 @@
 package appewtc.masterung.mytraffic;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -40,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                intent.putExtra("Title", titleStrings[i]);
+                intent.putExtra("Detail", detailStrings[i]);
+                intent.putExtra("Image", ints[i]);
+                startActivity(intent);
+
 
             }
         });
